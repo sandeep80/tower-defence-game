@@ -64,11 +64,9 @@ $(document).ready(function () {
     comp_turn = false;
 
     //$('.cards').on('click', card_click);
-    $(".cards").click(function(event) {
-        card_click($(this), event);
+    $(".cards").click(function(event)
+    {card_click($(this), event);
     });
-
-
 });
 
 
@@ -100,7 +98,6 @@ function call_attack(this_obj, e){
         if (between(calculated_th, 41 , 50)) {
             console.log("decrease height"+calculated_th);
 
-
         }
         else{
             console.log("top tower damaged");
@@ -113,7 +110,7 @@ function call_attack(this_obj, e){
     {
         if (between(calculated_th, 31, 40))
         {
-            console.log("do nothing");
+           console.log("do nothing");
         }
         else{
             console.log("dec");
@@ -147,12 +144,10 @@ function call_attack(this_obj, e){
             console.log("dec");
             $('#tower_container2').find('#t_block_3').hide();
             $('#tower_container2').find('#t_block_2').attr('src','images/right/Layer1.png');
-
             //decrease_tower_height();
             r10_20=true;
         }
     }
-
 }
 
 function call_build(this_obj, e){
@@ -161,16 +156,16 @@ function call_build(this_obj, e){
   $('#tower_increase').text(build);
     var tower_th= $('#tower_increase').text();
 
-    if( (parseInt(build)>=50) ){
+    if( (parseInt(build)>=42) ){
         e.preventDefault();
         alert("Not enough in build")
     }
 
     else
     {
-//        $("#red_score").text(calRed);
+//     $("#red_score").text(calRed);
        $("#blue_score").text(calBlue);
-//        $("#green_score").text(calGreen);
+//     $("#green_score").text(calGreen);
     }
 
     if (d10_20==false){
@@ -231,6 +226,7 @@ function comp_play(){
     //console.log($($(".cards")[item]).attr('class'));
     //$(".cards")[item].click(card_click_old(item));
     $(".cards")[item].click(card_click($(".cards")[item]));
+    console.log("computer play"+$('.card_slot').find("data-val-type"));
 
 //    user_turn = true;
 //    comp_turn = false;
@@ -259,7 +255,7 @@ function card_click_old(this_card_index){
 }
 
 function card_click(this_obj, event){
-    console.log("in card click");
+    console.log("in card click "+ this_obj);
 
     card_type = $(this_obj).find('img').attr("data-val-type");
     //console.log("ct :- " + card_type);
