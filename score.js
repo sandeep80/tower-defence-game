@@ -85,7 +85,7 @@ function call_attack(this_obj, e){
 
     //console.log(calRed);
 
-    if( (parseInt(calRed)<=0) ){
+    if( (parseInt(calRed)<0) ){
         e.preventDefault();
         alert("not enough resources in attack");
 
@@ -93,12 +93,14 @@ function call_attack(this_obj, e){
     else{
         $("#red_score").text(calRed);
         $("#blue_score").text(calBlue);
-        $("#green_score").text(calGreen);
+//      $("#green_score").text(calGreen);
     }
 
     if (r40_50==false){
-        if (between(calculated_th, 40 , 50)) {
-            console.log("do nothing");
+        if (between(calculated_th, 41 , 50)) {
+            console.log("decrease height"+calculated_th);
+
+
         }
         else{
             console.log("top tower damaged");
@@ -109,7 +111,7 @@ function call_attack(this_obj, e){
     }
     if ((r30_40==false) && (r40_50==true))
     {
-        if (between(calculated_th, 30, 40))
+        if (between(calculated_th, 31, 40))
         {
             console.log("do nothing");
         }
@@ -123,7 +125,7 @@ function call_attack(this_obj, e){
     }
 
     if ((r20_30==false) && (r30_40==true) && (r40_50==true)){
-        if (between(calculated_th, 20, 30)) {
+        if (between(calculated_th, 21, 30)) {
 
             console.log("do nothing");
         }
@@ -166,9 +168,9 @@ function call_build(this_obj, e){
 
     else
     {
-        $("#red_score").text(calRed);
-        $("#blue_score").text(calBlue);
-        $("#green_score").text(calGreen);
+//        $("#red_score").text(calRed);
+       $("#blue_score").text(calBlue);
+//        $("#green_score").text(calGreen);
     }
 
     if (d10_20==false){
