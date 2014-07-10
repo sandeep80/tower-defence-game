@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tower Defense game</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="jquery.parallax.css"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="score.js"></script>
+    <script type="text/javascript" src="random.js"></script>
+    <script type="text/javascript" src="jquery.parallax.js"></script>
+    <script type="text/javascript" src="jquery.event.frame.js"></script>
+
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="background_container">
+    <img class="background_image" src="images/background.jpg" alt="background">
+
+    <div class="cloud_container">
+        <div class="background1"></div>
+        <div class="background2"></div>
+        <!--<div class="background3"></div>-->
+        <!--<div class="background4"></div>-->
+    </div>
+    <div class="tower_card_container">
+        <div class="tower_container_wrapper">
+            <div id="tower_container1">
+                <!--<img class="tower" id="tower1" src="images/right_tower.png">-->
+                <img class="tower" id="t_build_1" src="images/layer breaking left/Left tower1.png">
+                <img class="tower" id="t_build_2" src="images/layer breaking left/Layer5.png">
+                <img class="tower" id="t_build_3" src="images/layer breaking left/Layer5.png">
+                <img class="tower" id="t_build_4" src="images/layer breaking left/Layer5.png">
+                <!--<img class="tower" id="t_build_5" src="images/layer breaking left/Layer5.png">-->
+                <img class="tower" id="t_build_10" src="images/layer breaking left/Left tower top.png">
+
+                <img class="tower" id="t_build_6" src="images/layer breaking left/Layer5.png">
+                <img class="tower" id="t_build_7" src="images/layer breaking left/Layer5.png">
+                <img class="tower" id="t_build_8" src="images/layer breaking left/Layer5.png">
+                <img class="tower" id="t_build_9" src="images/layer breaking left/Left tower top.png">
+
+
+                <span id="tower_increase"></span>
+            </div>
+            <div id="tower_container2">
+                <!--<img class="tower"  id="tower2" src="images/right_tower.png">-->
+                <img class="tower" id="t_block_1" src="images/right/Right tower1.png">
+                <img class="tower" id="t_block_2" src="images/right/Layer5.png">
+                <img class="tower" id="t_block_3" src="images/right/Layer5.png">
+                <img class="tower" id="t_block_4" src="images/right/Layer5.png">
+                <!--<img class="tower" id="t_block_5" src="images/right/Layer5.png">-->
+                <img class="tower" id="t_block_6" src="images/right/Right tower top.png">
+                <span id="tower_health"></span>
+            </div>
+
+            <div id="target1" class="parallax-port">
+
+                <img class="parallax-layer " src="images/left_dots/1L.png" alt=""/>
+
+
+                <img class="parallax-layer " src="images/left_dots/2L.png" alt=""/>
+
+
+                <img class="parallax-layer " src="images/left_dots/3L.png" alt=""/>
+            </div>
+                <!--<div id="target2" class="parallax-port">-->
+
+                    <!--<img class="parallax-layer " src="images/left_dots/1L.png" alt=""/>-->
+
+
+                    <!--<img class="parallax-layer " src="images/left_dots/2L.png" alt=""/>-->
+
+
+                    <!--<img class="parallax-layer " src="images/left_dots/3L.png" alt=""/>-->
+                <!--</div>-->
+        </div>
+
+        <!---  card slot from here  -->
+        <div class="card_slot">
+
+            <div class="card_slot1 cards">
+
+            </div>
+            <div class="card_slot2 cards">
+
+            </div>
+            <div class="card_slot3 cards">
+
+            </div>
+            <!--<div class="card_slot4 cards">-->
+
+            <!--</div>-->
+            <!--<div class="card_slot5 cards">-->
+
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<!--- end here-->
+
+<div class="resource">
+    <div class="resource1">
+        <div class="resource_name">Red
+            <div class="resource_score" id="red_score">
+
+            </div>
+        </div>
+    </div>
+    <div class="resource2">
+        <div class="resource_name">Blue
+            <div class="resource_score" id="blue_score"></div>
+        </div>
+    </div>
+    <div class="resource3">
+        <div class="resource_name">Green
+            <div class="resource_score" id="green_score"></div>
+        </div>
+    </div>
+</div>
+<!--<div class="question_panel">-->
+<!--<div class="question"></div>-->
+<!--</div>-->
+
+<script>
+    var theImages = [myCards[0].card1.image, myCards[0].card2.image, myCards[0].card3.image];
+    var user_turn, comp_turn;
+
+    $(function () {
+        newArray = swapImage(theImages);
+        var red_val, blue_val, green_val, attack_val, build_val, card_type;
+        $.each(newArray, function (index, value) {
+            red_val = eval("myCards[0]." + value.substr(value.indexOf("/") + 1).split(".")[0] + ".red");
+            blue_val = eval("myCards[0]." + value.substr(value.indexOf("/") + 1).split(".")[0] + ".blue");
+            green_val = eval("myCards[0]." + value.substr(value.indexOf("/") + 1).split(".")[0] + ".green");
+            attack_val = eval("myCards[0]." + value.substr(value.indexOf("/") + 1).split(".")[0] + ".attack");
+            build_val = eval("myCards[0]." + value.substr(value.indexOf("/") + 1).split(".")[0] + ".build");
+            card_type = eval("myCards[0]." + value.substr(value.indexOf("/") + 1).split(".")[0] + ".type");
+            $('.card_slot').find('.cards').eq(index).append('<img data-val-type="' + card_type + '" data-val-green="' + green_val + '" data-val-build="' + build_val + '" data-val-blue="' + blue_val + '" data-val-red="' + red_val + '" src="' + value + '" data-val-attack="' + attack_val + '">');
+        });
+    });
+</script>
+
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>-->
+<!--<script src="jquery.parallax.js"></script>-->
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        var target1 = jQuery("#target1");
+
+        target1
+                .children('img')
+                .parallax(
+                { mouseport: target1 },
+                { xparallax: 0.2, yparallax: 0.2 },     // Blue layer options
+                { xparallax: 0.6, yparallax: 0.6 },     // Green layer options
+                {}                                      // Red layer options
+        );
+    });
+
+    jQuery(document).ready(function () {
+        var target2 = jQuery("#target2");
+
+        target2
+                .children('img')
+                .parallax(
+                { mouseport: target2 },
+                { xparallax: 1, yparallax: 1 },     // Blue layer options
+                { xparallax: 0.2, yparallax: 0.2 },     // Green layer options
+                {}                                      // Red layer options
+        );
+    });
+</script>
+
+
+<script type="text/javascript" src="jquery.ifixpng.js"></script>
+<!--<script type="text/javascript">jQuery(document).ready(function () {-->
+    <!--jQuery("img[src$='png']").ifixpng();-->
+<!--});-->
+<!--</script>-->
+</body>
+</html>
