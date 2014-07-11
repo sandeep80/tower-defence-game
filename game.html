@@ -17,84 +17,90 @@
 </head>
 <body>
 <div class="background_container">
-    <img class="background_image" src="images/background.jpg" alt="background">
+    <img class="background_image" src="images/2.png" alt="background">
 
-    <div class="cloud_container">
-        <div class="background1"></div>
-        <div class="background2"></div>
-        <!--<div class="background3"></div>-->
-        <!--<div class="background4"></div>-->
-    </div>
-    <div class="tower_card_container">
-        <div class="tower_container_wrapper">
-            <div id="tower_container1">
-                <!--<img class="tower" id="tower1" src="images/right_tower.png">-->
-                <img class="tower" id="t_build_1" src="images/layer breaking left/Left tower1.png">
-                <img class="tower" id="t_build_2" src="images/layer breaking left/Layer5.png">
-                <img class="tower" id="t_build_3" src="images/layer breaking left/Layer5.png">
-                <img class="tower" id="t_build_4" src="images/layer breaking left/Layer5.png">
-                <!--<img class="tower" id="t_build_5" src="images/layer breaking left/Layer5.png">-->
-                <img class="tower" id="t_build_10" src="images/layer breaking left/Left tower top.png">
+    <div>
+        <img id="parallax_background" src="images/1.png" style="position: absolute;top: -1%;width: 100%;height:100%"/>
 
-                <img class="tower" id="t_build_6" src="images/layer breaking left/Layer5.png">
-                <img class="tower" id="t_build_7" src="images/layer breaking left/Layer5.png">
-                <img class="tower" id="t_build_8" src="images/layer breaking left/Layer5.png">
-                <img class="tower" id="t_build_9" src="images/layer breaking left/Left tower top.png">
-
-
-                <span id="tower_increase"></span>
-            </div>
-            <div id="tower_container2">
-                <!--<img class="tower"  id="tower2" src="images/right_tower.png">-->
-                <img class="tower" id="t_block_1" src="images/right/Right tower1.png">
-                <img class="tower" id="t_block_2" src="images/right/Layer5.png">
-                <img class="tower" id="t_block_3" src="images/right/Layer5.png">
-                <img class="tower" id="t_block_4" src="images/right/Layer5.png">
-                <!--<img class="tower" id="t_block_5" src="images/right/Layer5.png">-->
-                <img class="tower" id="t_block_6" src="images/right/Right tower top.png">
-                <span id="tower_health"></span>
-            </div>
-
-            <div id="target1" class="parallax-port">
-
-                <img class="parallax-layer " src="images/left_dots/1L.png" alt=""/>
-
-
-                <img class="parallax-layer " src="images/left_dots/2L.png" alt=""/>
-
-
-                <img class="parallax-layer " src="images/left_dots/3L.png" alt=""/>
-            </div>
-                <!--<div id="target2" class="parallax-port">-->
-
-                    <!--<img class="parallax-layer " src="images/left_dots/1L.png" alt=""/>-->
-
-
-                    <!--<img class="parallax-layer " src="images/left_dots/2L.png" alt=""/>-->
-
-
-                    <!--<img class="parallax-layer " src="images/left_dots/3L.png" alt=""/>-->
-                <!--</div>-->
+        <div class="cloud_container">
+            <div class="background1"></div>
+            <div class="background2"></div>
+            <!--<div class="background3"></div>-->
+            <!--<div class="background4"></div>-->
         </div>
+        <div class="tower_card_container">
+            <div class="tower_container_wrapper">
+                <div id="tower_container1">
+                    <!--<img class="tower" id="tower1" src="images/right_tower.png">-->
+                    <img class="tower" id="t_build_1" src="images/left_tower/Left tower1.png">
 
-        <!---  card slot from here  -->
-        <div class="card_slot">
 
-            <div class="card_slot1 cards">
+
+                       <img class="tower" id="t_build_2" src="images/left_tower/Layer5.png">
+
+
+                     <img class="tower" id="t_build_3" src="images/left_tower/Layer5.png">
+                    <img class="tower" id="t_build_4" src="images/left_tower/Layer5.png">                    <!--<img class="tower" id="t_build_5" src="images/layer breaking left/Layer5.png">-->
+                 <img class="tower" id="t_build_10" src="images/left_tower/Left tower top.png">
+
+                    <img class="tower" id="t_build_6" src="images/left_tower/Layer5.png">
+                    <img class="tower" id="t_build_7" src="images/left_tower/Layer5.png">
+                    <img class="tower" id="t_build_8" src="images/left_tower/Layer5.png">
+                    <img class="tower" id="t_build_9" src="images/left_tower/Left tower top.png">
+
+
+                    <span id="tower_increase"></span>
+                </div>
+                <div id="tower_container2">
+                    <!--<img class="tower"  id="tower2" src="images/right_tower.png">-->
+                    <img class="tower" id="t_block_1" src="images/right/Right tower1.png">
+                    <img class="tower" id="t_block_2" src="images/right/Layer5.png">
+                    <img class="tower" id="t_block_3" src="images/right/Layer5.png">
+                    <img class="tower" id="t_block_4" src="images/right/Layer5.png">
+                    <!--<img class="tower" id="t_block_5" src="images/right/Layer5.png">-->
+
+                    <img class="tower" id="t_block_6" src="images/right/Right tower top.png">
+                    <!--<img class="tower" id="t_block_7" src="images/right/Layer5.png">-->
+
+
+                    <span id="tower_health"></span>
+                </div>
+
+                <div id="target1" class="parallax-port">
+
+                    <img class="parallax-layer " src="images/left_dots/1L.png" alt=""/>
+
+
+                    <img class="parallax-layer " src="images/left_dots/2L.png" alt=""/>
+
+
+                    <img class="parallax-layer " src="images/left_dots/3L.png" alt=""/>
+                </div>
 
             </div>
-            <div class="card_slot2 cards">
-
+            <div id="stone_container">
+                <img  id="stone" src="images/stone.png"/>
             </div>
-            <div class="card_slot3 cards">
 
+            <!---  card slot from here  -->
+            <div class="card_slot">
+
+                <div class="card_slot1 cards">
+
+                </div>
+                <div class="card_slot2 cards">
+
+                </div>
+                <div class="card_slot3 cards">
+
+                </div>
+                <!--<div class="card_slot4 cards">-->
+
+                <!--</div>-->
+                <!--<div class="card_slot5 cards">-->
+
+                <!--</div>-->
             </div>
-            <!--<div class="card_slot4 cards">-->
-
-            <!--</div>-->
-            <!--<div class="card_slot5 cards">-->
-
-            <!--</div>-->
         </div>
     </div>
 </div>
@@ -171,12 +177,19 @@
         );
     });
 </script>
+<script>
+    $("#stone_container").mouseenter(function(){
+        $(this).animate({left:"-3%"},2000);
+        $("#parallax_background").animate({left:"1%"},2000);
+$(".tower_container_wrapper").animate({left:"1%"},2000);
+    });
+    $("#stone_container").mouseleave(function(){
+        $(this).animate({left:"-5%"},2000);
+        $("#parallax_background").animate({left:"0%"},2000);
+        $(".tower_container_wrapper").animate({left:"0%"},2000);
+    });
+</script>
 
 
-<script type="text/javascript" src="jquery.ifixpng.js"></script>
-<!--<script type="text/javascript">jQuery(document).ready(function () {-->
-    <!--jQuery("img[src$='png']").ifixpng();-->
-<!--});-->
-<!--</script>-->
 </body>
 </html>

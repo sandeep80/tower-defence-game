@@ -52,7 +52,7 @@ var user_turn = true;
 var comp_turn = false;
 var user_click = true;
 //var comp_click = false;
-    $(document).ready(function () {
+$(document).ready(function () {
     var red_val = 50;
     var blue_val = 50; // for blue
     var green_val = 50; // for green
@@ -72,10 +72,10 @@ var user_click = true;
         card_click($(this), event);
     });
 
-        if((user_turn==true) && (user_click==true) && (comp_turn==false))
-        {
-            console.log("User turn");
-        }
+    if((user_turn==true) && (user_click==true) && (comp_turn==false))
+    {
+        console.log("User turn");
+    }
 });
 
 
@@ -101,7 +101,7 @@ function call_attack(this_obj, e){
     else{
         $("#red_score").text(calRed);
         $("#blue_score").text(calBlue);
-//      $("#green_score").text(calGreen);
+// $("#green_score").text(calGreen);
     }
 
     if (r40_50==false){
@@ -110,7 +110,10 @@ function call_attack(this_obj, e){
         }
         else{
             console.log("top tower damaged");
-            $('#tower_container2').find('#t_block_6').attr('src','images/right/Layer1.png');
+            $('#tower_container2').find('#t_block_6').attr('src','images/right/Layer1.png').css({
+                "width":"27%",
+                "left":"36%"
+            });
             //decrease_tower_height();
             r40_50=true;
         }
@@ -124,7 +127,7 @@ function call_attack(this_obj, e){
         else{
             console.log("dec");
             $('#tower_container2').find('#t_block_6').hide();
-             $('#tower_container2').find('#t_block_4').attr('src','images/right/Layer1.png');
+            $('#tower_container2').find('#t_block_4').attr('src','images/right/Layer1.png');
             //decrease_tower_height();
             r30_40=true;
         }
@@ -164,7 +167,7 @@ function call_attack(this_obj, e){
 function call_build(this_obj, e){
     console.log("in build fn");
     build = parseInt($('#tower_increase').text()) + parseInt(blue);
-  $('#tower_increase').text(build);
+    $('#tower_increase').text(build);
     var tower_th= $('#tower_increase').text();
 
     if( (parseInt(build)>=41) ){
@@ -173,18 +176,18 @@ function call_build(this_obj, e){
     }
     else
     {
-//        $("#red_score").text(calRed);
-       $("#blue_score").text(calBlue);
-//        $("#green_score").text(calGreen);
+// $("#red_score").text(calRed);
+        $("#blue_score").text(calBlue);
+// $("#green_score").text(calGreen);
     }
 
     if (d10_20==false){
         if (between(tower_th, 10 , 20)) {
-             $('#tower_container1').find('#t_build_6').show();
+            $('#tower_container1').find('#t_build_6').show();
 
 
 
-//            $('#t_build_10').find("#t_build_10")
+// $('#t_build_10').find("#t_build_10")
             $('#t_build_10').hide();
             d10_20=true;
         }
@@ -211,8 +214,8 @@ function call_build(this_obj, e){
             d40_50=true;
         }
     }
-//    $('#tower_health').text(cal_health_tower);
-//    var calculated_th = $('#tower_health').text();
+// $('#tower_health').text(cal_health_tower);
+// var calculated_th = $('#tower_health').text();
 
 }
 
@@ -226,26 +229,26 @@ function decrease_tower_height(){
 }
 
 function comp_play(){
-//    console.log("computer playing");
-//    var cards_present = [0, 1, 2];
-//    var item = cards_present[Math.floor(Math.random()*cards_present.length)];
-//    console.log(item);
+// console.log("computer playing");
+// var cards_present = [0, 1, 2];
+// var item = cards_present[Math.floor(Math.random()*cards_present.length)];
+// console.log(item);
 
 
- //console.log ("computer play"+$(".cards")[item].click(card_click($(".cards").find("img").attr("data-val-type"))));
+    //console.log ("computer play"+$(".cards")[item].click(card_click($(".cards").find("img").attr("data-val-type"))));
 //console.log("computer play"+$(".cards_slot").find("img").attr("data-val-type")(this_obj, event));
 
 //console.log( "computer play"+$(".card_slot").find("img").attr("data-var-type"));
- }
+}
 
 function user_play()
 {
-console.log("click on card");
+    console.log("click on card");
 }
 
 function between(x, min, max)
 {
-return x >= min && x <= max;
+    return x >= min && x <= max;
 }
 
 function card_click_old(this_card_index)
@@ -285,7 +288,7 @@ function card_click(this_obj, event){
 
     if((comp_turn==true) && (user_turn==false))
     {
-     comp_auto();
+        comp_auto();
     }
 
 }
@@ -295,6 +298,7 @@ function comp_auto()
     //console.log(item);
     var random_card = $('.card_slot').find('.cards')[item];
     $($(random_card)).trigger("click");
+    console.log("Comp auto"+ item);
 
 }
 

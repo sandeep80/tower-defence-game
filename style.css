@@ -144,11 +144,11 @@ body {
 }
 
 .background_container {
-    width: 100%;
+    width: 104%;
     height: 100%;
     position: relative;
     top: 0%;
-    left: 0%;
+    left: -2%;
     background-size: 100% 100%;
 }
 .background_image {
@@ -160,7 +160,7 @@ body {
     /*background-color: blue;*/
     height: 190px;
     top: 0%;
-    left: 0%;
+    left: 2%;
     position: absolute;
 }
 
@@ -216,14 +216,15 @@ body {
     bottom: 34%;
     height: 17%;
     left: 35%;
+
     width: 30%;
     /*display: none;*/
 }
 #tower_container1 #t_build_4{
     bottom: 49%;
     height: 17%;
-    left: 36%;
-    width: 28%;
+    left: 36.5%;
+    width: 27.5%;
     /*display: none;*/
 }
 /*#tower_container1 #t_build_5{*/
@@ -266,8 +267,8 @@ body {
     bottom: 63%;
     display: block;
     height: 17%;
-    left: 34%;
-    width: 31%;
+    left: 35%;
+    width: 30%;
 
 }
 #tower_increase
@@ -309,7 +310,7 @@ body {
 
 #tower_container2 #t_block_3 {
     bottom: 33%;
-    height: 18%;
+    height: 19%;
     left: 35%;
     width: 30%;
 }
@@ -334,6 +335,14 @@ body {
     width: 31%;
 
 }
+/*#tower_container2 #t_block_7{*/
+    /*bottom: 63%;*/
+    /*height: 17%;*/
+    /*left: 34%;*/
+    /*width: 31%;*/
+/*diplay:none;*/
+
+/*}*/
 #tower1 {
     width: 100%;
     height: 100%;
@@ -363,6 +372,7 @@ body {
     width: 52%;
     height: 33%;
     position: absolute;
+    z-index: 2
 }
 
 .card_slot1 {
@@ -436,7 +446,12 @@ body {
 .resource_name{
     border: 1px solid yellow;
     width: 50%;
+    width: 100%;
     height: 100%;
+top: 3%;
+    position: absolute;
+
+
 }
 .resource_score{
     border: 1px solid #FFC0CB;
@@ -486,6 +501,21 @@ body {
 
 .site_wrap {
     margin-left: 80px;
+}
+#stone_container{
+    /*border: 2px solid orange;*/
+    width: 41%;
+    height: 31%;
+    top: 69%;
+    left: -5%;
+    position: absolute;
+    z-index: 1;
+}
+#stone{
+    width: 100%;
+    height: 100%;
+    top: 3%;
+    position: absolute;
 }
 /*.question_panel {*/
 /*top: 20%;*/
