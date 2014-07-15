@@ -1,45 +1,42 @@
 <html>
-<title></title>
 <head>
-</head>
-<style>
-    button
-    {
 
-        position: absolute;
-    }
-    #content
-    {
-       width:150px;
-        height: 100px;
-        border: 2px solid red;
-        bottom: 0px;
-        background-color: black;
-        top:0px ;
-        position: relative;
-    }
-</style>
+    <style>
+        .demo
+        {
+            height:150px;
+            width:150px;
+           border: 1px solid blue;
+            position: absolute;
+        }
+    </style>
+
+    <script src="jquery.min.js"></script>
 
 
-<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-
-
-    $("button").click(function() {
-        $("#content").animate(
-                {"height": "+=80px"},
-                "fast");
-    });
+    <script>
+        var test=50;
+        var button_present=[0,1,2,3,4];
+//        var item;
+        var random_button;
+        $(document).ready(function () {
+        $(function () {
+            random_button = $(".demo").find(".buts")[Math.floor(3 * Math.random())];
+            $('.buts').on('click',function(){
+               console.log(button_present[Math.floor(button_present.length * Math.random())]);
+                random_button = $(".demo").find(".buts")[Math.floor(3 * Math.random())];
+            });
+            $(random_button).trigger('click');
+       });
     });
 </script>
+</head>
+
 <body>
-
-<div id="content">
-
+<div class="demo">
+    <div  class="btn1 buts"><button>Button1</button></div>
+    <div class="btn2 buts"><button>Button2</button></div>
+    <div class="btn3 buts"><button>Button3</button></div>
 </div>
-
-<button>try</button>
 </body>
-
 </html>

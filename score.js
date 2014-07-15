@@ -7,7 +7,6 @@ var myCards = [
             "blue": "0",
             "green": "4",
             "attack": "5",
-
             "image": "images/card1.png"
         },
         "card2": {
@@ -47,7 +46,7 @@ var d20_30 = false;
 var d30_40 = false;
 var d40_50 = false;
 var cards_present = [0, 1, 2];
-var item;
+var item;var red_val, blue_val, green_val, attack_val, build_val, card_type;
 var user_turn = true;
 var comp_turn = false;
 var user_click = true;
@@ -66,16 +65,15 @@ $(document).ready(function () {
     $('#tower_increase').text(tower_increase);
 
 
-
     //$('.cards').on('click', card_click);
     $(".cards").click(function(event) {
-        card_click($(this), event);
+        if(user_turn==true){
+            card_click($(this), event);
+        }
+
     });
 
-    if((user_turn==true) && (user_click==true) && (comp_turn==false))
-    {
-        console.log("User turn");
-    }
+
 });
 
 
@@ -142,7 +140,10 @@ function call_attack(this_obj, e){
             console.log("dec");
             $('#tower_container2').find('#t_block_4').hide();
             $('#tower_container2').find('#t_block_3').attr('src','images/right/Layer1.png');
-
+if((comp_turn==true) && (user_turn==false))
+    {
+        comp_auto();
+    }
             //decrease_tower_height();
             r20_30=true;
         }
@@ -258,6 +259,7 @@ function card_click_old(this_card_index)
 }
 
 function card_click(this_obj, event){
+
     console.log("in card click");
 
     card_type = $(this_obj).find('img').attr("data-val-type");
@@ -286,19 +288,46 @@ function card_click(this_obj, event){
             console.log("do nothing");
     }
 
-    if((comp_turn==true) && (user_turn==false))
+    user_turn = false;
+    if((user_turn==false))
     {
         comp_auto();
     }
-
 }
 function comp_auto()
 {
-    item = cards_present[Math.floor(cards_present.length * Math.random())];
-    //console.log(item);
-    var random_card = $('.card_slot').find('.cards')[item];
-    $($(random_card)).trigger("click");
-    console.log("Comp auto"+ item);
+    comp_turn==true;
+//    item = cards_present[Math.floor(cards_present.length * Math.random())];
+//    //console.log(item);
+//    var random_card = $('.card_slot').find('.cards')[item];
+//
+//
+//    $($(random_card)).trigger("click");
+//    console.log("Comp auto "+ item);
+
+
+
+    var button_present=[myCards[0].card1.image, myCards[0].card2.image, myCards[0].card3.image];
+    $(function () {
+
+
+//            $('.card_slot').find('.cards').eq(index).append('<img data-val-type="' + card_type + '" data-val-green="' + green_val + '" data-val-build="' + build_val + '" data-val-blue="' + blue_val + '" data-val-red="' + red_val + '" src="' + value + '" data-val-attack="' + attack_val + '">');
+        });
+
+    var item;
+    var random_button;
+    $(document).ready(function () {
+        $(function () {
+            random_button = $(".card_slot").find(".cards")[Math.floor(3 * Math.random())];
+//            $('.cards').on('click',function(){
+                console.log(button_present[Math.floor(button_present.length * Math.random())]);
+                random_button = $(".card_slot").find(".cards")[Math.floor(3 * Math.random())];
+//            });
+            $(random_button).trigger('click');
+        });
+        });
+
+    user_turn = true;
 
 }
 
